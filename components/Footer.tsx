@@ -105,7 +105,7 @@ export default function Footer() {
                 <div className="h-[2px] w-16 md:w-20 bg-white"></div>
               </div>
               <h3 className="font-serif text-[32px] md:text-[42px] lg:text-[56px] leading-tight font-normal">
-                Ready To Explore What's Possible With Us?
+                Ready To Explore What&apos;s Possible With Us?
               </h3>
             </div>
 
@@ -162,7 +162,7 @@ export default function Footer() {
             {/* Form Box */}
             <div className="bg-[#152238] p-6 md:p-8 lg:p-10 rounded-sm mt-12 md:mt-14 lg:mt-16 shadow-2xl">
               <p className="text-[15px] md:text-[16px] lg:text-[18px] leading-relaxed mb-6 md:mb-7 lg:mb-8 text-white/90">
-                Let's have a confidential conversation about your business and goals.
+                Let&apos;s have a confidential conversation about your business and goals.
               </p>
 
               {submitStatus.type && (

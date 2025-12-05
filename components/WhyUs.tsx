@@ -50,7 +50,7 @@ export default function WhyUs() {
             </div>
             
             <p className="text-[15px] md:text-[16px] lg:text-[17px] leading-[1.6] text-[#626262] font-medium mb-6 md:mb-7 lg:mb-8 max-w-full lg:max-w-[580px]">
-              We're different from traditional private equity. Our approach combines entrepreneurial drive with the care and stability needed to protect your legacy.
+              We&apos;re different from traditional private equity. Our approach combines entrepreneurial drive with the care and stability needed to protect your legacy.
             </p>
             
             <button className="flex items-center gap-3 text-dark font-semibold text-[13px] md:text-sm uppercase tracking-wide hover:opacity-70 transition-opacity mb-10 lg:mb-0">

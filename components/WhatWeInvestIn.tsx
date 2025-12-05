@@ -41,7 +41,7 @@ export default function WhatWeInvestIn() {
               What We Invest In
             </h2>
             <p className="text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.7] text-[#626262]">
-              Whether you're exploring immediate opportunities or planning for the future, we welcome discussions about the potential of your business. We focus on companies that align with these criteria.
+              Whether you&apos;re exploring immediate opportunities or planning for the future, we welcome discussions about the potential of your business. We focus on companies that align with these criteria.
             </p>
           </div>
           

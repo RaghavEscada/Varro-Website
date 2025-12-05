@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="container-custom">
         <div className="mb-[74px]">
           <h2 className="font-display text-[58px] font-semibold leading-[1.138em] capitalize text-white mb-[74px] max-w-[722px]">
-            Ready to explore what's possible with Us?
+            Ready to explore what&apos;s possible with Us?
           </h2>
           <h3 className="text-[26px] font-normal leading-[3.154em] uppercase text-white">
             Get in touch
@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="max-w-[653px] ml-auto">
           <div className="bg-dark-tertiary py-16 px-[54px] rounded-none">
             <p className="text-xl font-medium leading-[1.4em] text-text-light mb-[102px]">
-              Let's have a confidential conversation about your business and goals.
+              Let&apos;s have a confidential conversation about your business and goals.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-[35px]">
               <div className="flex gap-[25px]">
