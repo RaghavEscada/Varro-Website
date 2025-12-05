@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 p-0 font-primary text-dark bg-white;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-container mx-auto px-[110px];
+  }
+
+  @media (max-width: 1440px) {
+    .container-custom {
+      @apply px-20;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .container-custom {
+      @apply px-10;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-custom {
+      @apply px-5;
+    }
+  }
+}
+
