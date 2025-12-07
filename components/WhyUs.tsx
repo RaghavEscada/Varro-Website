@@ -1,89 +1,221 @@
-import Image from 'next/image'
-
 export default function WhyUs() {
-  const whyUsItems = [
-    {
-      number: '01',
-      title: 'Long-term ownership, not a quick flip',
-    },
-    {
-      number: '02',
-      title: 'Backed by capital partners, with hands-on operational experience',
-    },
-    {
-      number: '03',
-      title: 'People-first transition',
-    },
-    {
-      number: '04',
-      title: 'No broker commissions',
-    },
-    {
-      number: '05',
-      title: 'Confidentiality and discretion',
-    },
+  const valueProps = [
+    { number: '01', text: 'Long-term ownership, not a quick flip' },
+    { number: '02', text: 'Backed by capital partners, with hands-on operational experience' },
+    { number: '03', text: 'People-first transition' },
+    { number: '04', text: 'No broker commissions' },
+    { number: '05', text: 'Confidentiality and discretion' },
+  ]
+
+  const businessItems = [
+    'Strong customer retention and satisfaction rates',
+    'Sustainable competitive moats and differentiation',
+    'Products or services integral to client operations',
+  ]
+
+  const leadershipItems = [
+    'Keen to step back from day-to day operations',
+    'Ready to explore new opportunities',
+    'Owner considering retiring',
+  ]
+
+  const revenueItems = [
+    'Recurring income streams and high customer lifetime value',
+    'Record of consistent profitability and growth',
+    'EBITA >$2M and revenue $10-30M',
   ]
 
   return (
-    <section className="pt-8 md:pt-10 lg:pt-12 pb-16 md:pb-24 lg:pb-32 bg-white">
-      <div className="container-custom">
-        {/* Header with line and title */}
-        <div className="text-center mb-12 md:mb-18 lg:mb-24">
-          <div className="w-[60px] md:w-[80px] lg:w-[100px] h-[2px] bg-dark mx-auto mb-4 md:mb-5 lg:mb-6" />
-          <h2 className="font-display text-[28px] md:text-[36px] lg:text-[45px] font-semibold leading-tight uppercase text-dark tracking-wider">
+    <section className="bg-white pt-8 md:pt-12 lg:pt-16 pb-16 md:pb-20 lg:pb-24">
+      <div className="container mx-auto px-5 md:px-12 lg:px-16 max-w-[1400px]">
+        {/* Why Us Header */}
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div className="w-[60px] md:w-[80px] lg:w-[100px] h-[2px] bg-[#1A1A1A] mx-auto mb-6 md:mb-8"></div>
+          <h2 className="font-display text-[36px] md:text-[44px] lg:text-[52px] font-semibold text-[#1A1A1A] mb-6 md:mb-8 uppercase">
             WHY US
           </h2>
+          <p className="text-[15px] md:text-[16px] lg:text-[18px] text-[#666666] max-w-[700px] mx-auto leading-relaxed">
+            We are an operator-led team committed to stewarding founder-owned and family-run businesses for the long term.
+          </p>
         </div>
-        
-        {/* Two column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-[1400px] mx-auto">
-          {/* Left side - Image and text */}
-          <div className="flex flex-col">
-            <div className="relative w-full h-[300px] md:h-[380px] lg:h-[450px] mb-6 md:mb-7 lg:mb-8">
-              <Image
-                src="/images/why-us-city.jpg"
-                alt="Sydney cityscape"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            
-            <p className="text-[15px] md:text-[16px] lg:text-[17px] leading-[1.6] text-[#626262] font-medium mb-6 md:mb-7 lg:mb-8 max-w-full lg:max-w-[580px]">
-              We&apos;re different from traditional private equity. Our approach combines entrepreneurial drive with the care and stability needed to protect your legacy.
-            </p>
-            
-            <button className="flex items-center gap-3 text-dark font-semibold text-[13px] md:text-sm uppercase tracking-wide hover:opacity-70 transition-opacity mb-10 lg:mb-0">
-              GET IN TOUCH
-              <span className="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-dark flex items-center justify-center">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </span>
-            </button>
-          </div>
-          
-          {/* Right side - Numbered list */}
-          <div className="flex flex-col gap-8 md:gap-10 lg:gap-12 pt-0 lg:pt-4">
-            {whyUsItems.map((item, index) => (
-              <div key={index} className="relative">
-                <div className="flex items-start gap-4 md:gap-5 lg:gap-6">
-                  <span className="text-[#E8E8E8] text-[40px] md:text-[48px] lg:text-[56px] font-light leading-none">
-                    {item.number}
-                  </span>
-                  <h3 className="text-[18px] md:text-[20px] lg:text-[22px] leading-[1.4] text-dark font-medium pt-2 md:pt-2.5 lg:pt-3 flex-1">
-                    {item.title}
-                  </h3>
+
+        {/* Value Propositions Grid with Vertical Dividers */}
+        <div className="relative mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 auto-rows-auto">
+            {/* First Row: Items 1, 2, 3 */}
+            {valueProps.slice(0, 3).map((prop, index) => (
+              <div
+                key={index}
+                className={`relative p-8 md:p-10 lg:p-12 row-start-1 ${
+                  index < 2 ? 'border-b md:border-b-0 md:border-r lg:border-b-0 lg:border-r border-gray-200' : ''
+                } ${
+                  index === 2 ? 'md:border-b lg:border-b-0 lg:border-r-0 border-gray-200' : ''
+                }`}
+              >
+                {/* Large Number Above */}
+                <div className="text-[80px] md:text-[90px] lg:text-[100px] font-light text-[#E5E5E5] leading-none mb-4 md:mb-6">
+                  {prop.number}
                 </div>
-                {index < whyUsItems.length - 1 && (
-                  <div className="w-full h-[1px] bg-[#E8E8E8] mt-6 md:mt-7 lg:mt-8" />
-                )}
+                
+                {/* Content with Teal Bullet */}
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-[#00BCD4] flex-shrink-0 mt-2"></div>
+                  <p className="text-[#1A1A1A] text-[16px] md:text-[17px] lg:text-[18px] font-medium leading-relaxed">
+                    {prop.text}
+                  </p>
+                </div>
               </div>
             ))}
+            
+            {/* Second Row: Items 4, 5 - Centered */}
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 row-start-2 border-t border-gray-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:max-w-[calc(200%/3)] lg:max-w-[calc(200%/3)] mx-auto">
+                {valueProps.slice(3, 5).map((prop, index) => (
+                  <div
+                    key={index + 3}
+                    className={`relative p-8 md:p-10 lg:p-12 ${
+                      index === 0 ? 'border-b md:border-b-0 md:border-r border-gray-200' : ''
+                    }`}
+                  >
+                    {/* Large Number Above */}
+                    <div className="text-[80px] md:text-[90px] lg:text-[100px] font-light text-[#E5E5E5] leading-none mb-4 md:mb-6">
+                      {prop.number}
+                    </div>
+                    
+                    {/* Content with Teal Bullet */}
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#00BCD4] flex-shrink-0 mt-2"></div>
+                      <p className="text-[#1A1A1A] text-[16px] md:text-[17px] lg:text-[18px] font-medium leading-relaxed">
+                        {prop.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+        </div>
+            
+        {/* What We Invest In Section */}
+        <div className="bg-[#F5F5F5] py-16 md:py-20 lg:py-24 -mx-5 md:-mx-12 lg:-mx-16 px-5 md:px-12 lg:px-16 mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-20">
+            {/* Left Side - Description */}
+            <div>
+              <div className="flex items-center gap-4 mb-6 md:mb-8">
+                <div className="w-[60px] md:w-[80px] h-[2px] bg-[#1A1A1A]"></div>
+                <h3 className="font-serif text-[28px] md:text-[36px] lg:text-[42px] font-semibold text-[#1A1A1A]">
+                  What We Invest In
+                </h3>
+              </div>
+              <p className="text-[15px] md:text-[16px] lg:text-[17px] text-[#666666] leading-relaxed max-w-[600px]">
+                Whether you&apos;re exploring immediate opportunities or planning for the future, we welcome discussions about the potential of your business. We focus on companies that align with these criteria.
+              </p>
+          </div>
+          
+            {/* Right Side - Key Metrics Box */}
+            <div className="border-2 border-[#00BCD4] bg-white p-6 md:p-8 lg:p-10 min-w-[280px] lg:min-w-[320px]">
+              <div className="space-y-4 md:space-y-5">
+                <div className="flex items-center gap-3">
+                  <span className="text-[#00BCD4] text-lg">♦</span>
+                  <span className="text-[#00BCD4] text-[18px] md:text-[20px] lg:text-[22px] font-semibold">
+                    EBITA &gt;$2M
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[#00BCD4] text-lg">♦</span>
+                  <span className="text-[#00BCD4] text-[16px] md:text-[17px] lg:text-[18px] font-medium">
+                    Consistent profitability
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[#00BCD4] text-lg">♦</span>
+                  <span className="text-[#00BCD4] text-[16px] md:text-[17px] lg:text-[18px] font-medium">
+                    $10-30M enterprise value
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Three Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+            {/* Business Column */}
+            <div>
+              <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
+                Business
+              </h4>
+              <ul className="space-y-4 md:space-y-5">
+                {businessItems.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-[14px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Leadership Column */}
+            <div>
+              <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
+                Leadership
+              </h4>
+              <ul className="space-y-4 md:space-y-5">
+                {leadershipItems.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-[14px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Revenue Profile Column */}
+            <div>
+              <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
+                Revenue Profile
+              </h4>
+              <ul className="space-y-4 md:space-y-5">
+                {revenueItems.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-[14px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Get In Touch Button */}
+        <div className="flex justify-center">
+          <button className="group flex items-center gap-4 bg-[#00BCD4] hover:bg-[#00ACC1] text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-[14px] md:text-[15px] lg:text-[16px] font-semibold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl">
+            GET IN TOUCH
+            <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </button>
         </div>
       </div>
     </section>
   )
 }
-
