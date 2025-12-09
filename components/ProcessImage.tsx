@@ -1,4 +1,11 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+
 export default function ProcessImage() {
+  const [activeStep, setActiveStep] = useState(0)
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([])
+
   const processSteps = [
     {
       week: 'Week 1',
@@ -27,25 +34,42 @@ export default function ProcessImage() {
     },
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+
+      stepRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect()
+          const elementTop = rect.top + window.scrollY
+          const elementBottom = elementTop + rect.height
+
+          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+            setActiveStep(index)
+          }
+        }
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial check
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <section 
-      className="w-full relative bg-[#1a2844] py-16 md:py-20 lg:py-24 overflow-hidden"
-      style={{
-        backgroundImage: 'url(/images/process-background-pattern.svg)',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-      }}
+      id="our-process"
+      className="w-full relative bg-[#04092C] py-20 md:py-28 lg:py-36 overflow-hidden scroll-mt-24"
     >
       {/* Subtle Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-[0.04]">
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="process-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <pattern id="process-grid" width="50" height="50" patternUnits="userSpaceOnUse">
               <path 
-                d="M 40 0 L 0 0 0 40" 
+                d="M 50 0 L 0 0 0 50" 
                 fill="none" 
-                stroke="rgba(255,255,255,0.3)" 
+                stroke="rgba(255,255,255,0.5)" 
                 strokeWidth="0.5"
               />
             </pattern>
@@ -70,44 +94,58 @@ export default function ProcessImage() {
 
       <div className="container mx-auto px-5 md:px-12 lg:px-16 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20 lg:mb-24">
-          <h2 className="font-serif text-[40px] md:text-[52px] lg:text-[64px] font-normal text-white mb-4 md:mb-6">
+        <div className="text-center mb-16 md:mb-20 lg:mb-24 pt-12 md:pt-16 lg:pt-20">
+          <h2 className="font-abhaya text-[48px] md:text-[60px] lg:text-[72px] font-normal text-white mb-5 md:mb-6 lg:mb-7 tracking-tight leading-tight">
             Our Process
           </h2>
-          <p className="text-[16px] md:text-[17px] lg:text-[18px] text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[16px] md:text-[18px] lg:text-[19px] text-white/80 font-light max-w-3xl mx-auto leading-relaxed">
             A thoughtful, respectful approach that puts your business needs and timeline first.
           </p>
         </div>
 
         {/* Timeline - Centered with left/right content */}
-        <div className="max-w-6xl mx-auto relative pb-12">
+        <div className="max-w-7xl mx-auto relative pb-16">
           {/* Vertical line in center */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/30"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/20"></div>
           
           {/* Steps */}
           {processSteps.map((step, index) => (
-            <div key={index} className="relative mb-32 md:mb-36 lg:mb-40 last:mb-0">
-              <div className="grid grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-start">
+            <div 
+              key={index} 
+              ref={(el) => { stepRefs.current[index] = el }}
+              className="relative mb-36 md:mb-44 lg:mb-52 last:mb-0"
+            >
+              <div className="grid grid-cols-[1fr_auto_1fr] gap-14 md:gap-20 lg:gap-24 items-start">
                 {/* Left side - Week badge and Title */}
-                <div className="text-right flex flex-col items-end pr-4">
-                  <div className="px-6 py-2 bg-[#00BCD4] rounded-[10rem] inline-block mb-4">
-                    <span className="text-white font-medium text-[14px]">
+                <div className="text-right flex flex-col items-end pr-6">
+                  <div className={`px-8 py-3 bg-[#1DB5BE] rounded-full inline-block mb-6 transition-all duration-300 ${
+                    activeStep === index ? 'scale-110 shadow-lg shadow-[#1DB5BE]/40' : ''
+                  }`}>
+                    <span className={`text-white text-[16px] md:text-[17px] transition-all duration-300 ${
+                      activeStep === index ? 'font-bold tracking-wide' : 'font-semibold'
+                    }`}>
                       {step.week}
                     </span>
                   </div>
-                  <h3 className="text-white/90 text-[20px] md:text-[22px] lg:text-[24px] font-light leading-tight">
+                  <h3 className={`text-white text-[24px] md:text-[28px] lg:text-[32px] leading-tight transition-all duration-300 ${
+                    activeStep === index ? 'font-medium' : 'font-light'
+                  }`}>
                     {step.title}
                   </h3>
                 </div>
 
                 {/* Center - Dot */}
-                <div className="flex items-start justify-center pt-2">
-                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white border-4 border-[#1a2844] relative z-10"></div>
+                <div className="flex items-start justify-center pt-3">
+                  <div className={`w-6 h-6 md:w-7 md:h-7 rounded-full bg-white border-[5px] border-[#04092C] relative z-10 transition-all duration-300 ${
+                    activeStep === index ? 'scale-125 shadow-lg shadow-white/30' : ''
+                  }`}></div>
                 </div>
 
                 {/* Right side - Description */}
-                <div className="pt-2 pl-4">
-                  <p className="text-white/70 text-[15px] md:text-[16px] leading-relaxed font-light max-w-lg">
+                <div className="pt-3 pl-6">
+                  <p className={`text-[17px] md:text-[19px] lg:text-[20px] leading-relaxed font-light max-w-2xl transition-all duration-300 ${
+                    activeStep === index ? 'text-white/85' : 'text-white/65'
+                  }`}>
                     {step.description}
                   </p>
                 </div>

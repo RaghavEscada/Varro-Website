@@ -24,8 +24,10 @@ const config: Config = {
       fontFamily: {
         primary: ['var(--font-montserrat)', 'sans-serif'],
         secondary: ['var(--font-inter)', 'sans-serif'],
-        display: ['var(--font-abhaya)', 'serif'],
-        abhaya: ['var(--font-abhaya)', 'serif'],
+        display: ['Abhaya Libre', 'serif'],
+        abhaya: ['Abhaya Libre', 'serif'],
+        playfair: ['Playfair Display', 'serif'],
+        serif: ['Playfair Display', 'serif'],
       },
       maxWidth: {
         container: '1920px',

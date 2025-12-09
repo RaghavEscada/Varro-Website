@@ -1,3 +1,5 @@
+'use client'
+
 export default function WhyUs() {
   const valueProps = [
     { number: '01', text: 'Long-term ownership, not a quick flip' },
@@ -26,7 +28,7 @@ export default function WhyUs() {
   ]
 
   return (
-    <section className="bg-white pt-8 md:pt-12 lg:pt-16 pb-16 md:pb-20 lg:pb-24">
+    <section className="bg-white pt-0 pb-16 md:pb-20 lg:pb-24">
       <div className="container mx-auto px-5 md:px-12 lg:px-16 max-w-[1400px]">
         {/* Why Us Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
@@ -97,7 +99,7 @@ export default function WhyUs() {
         </div>
             
         {/* What We Invest In Section */}
-        <div className="bg-[#F5F5F5] py-16 md:py-20 lg:py-24 -mx-5 md:-mx-12 lg:-mx-16 px-5 md:px-12 lg:px-16 mb-16 md:mb-20 lg:mb-24">
+        <div id="what-we-invest" className="bg-[#F5F5F5] py-16 md:py-20 lg:py-24 -mx-5 md:-mx-12 lg:-mx-16 px-5 md:px-12 lg:px-16 mb-16 md:mb-20 lg:mb-24 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-20">
             {/* Left Side - Description */}
             <div>
@@ -140,7 +142,7 @@ export default function WhyUs() {
           {/* Three Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
             {/* Business Column */}
-            <div>
+            <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 md:p-8">
               <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
                 Business
               </h4>
@@ -161,7 +163,7 @@ export default function WhyUs() {
             </div>
 
             {/* Leadership Column */}
-            <div>
+            <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 md:p-8">
               <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
                 Leadership
               </h4>
@@ -182,7 +184,7 @@ export default function WhyUs() {
             </div>
 
             {/* Revenue Profile Column */}
-            <div>
+            <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 md:p-8">
               <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
                 Revenue Profile
               </h4>
@@ -206,7 +208,22 @@ export default function WhyUs() {
 
         {/* Get In Touch Button */}
         <div className="flex justify-center">
-          <button className="group flex items-center gap-4 bg-[#00BCD4] hover:bg-[#00ACC1] text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-[14px] md:text-[15px] lg:text-[16px] font-semibold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl">
+          <button 
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById('contact')
+              if (element) {
+                const headerOffset = 100
+                const elementPosition = element.getBoundingClientRect().top
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                })
+              }
+            }}
+            className="group flex items-center gap-4 bg-[#00BCD4] hover:bg-[#00ACC1] text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-[14px] md:text-[15px] lg:text-[16px] font-semibold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+          >
             GET IN TOUCH
             <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
               <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

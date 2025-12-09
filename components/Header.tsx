@@ -2,22 +2,57 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      // Always show navbar in hero section (top of page)
+      if (currentScrollY < 100) {
+        setIsVisible(true)
+      } 
+      // Show navbar when scrolling up, hide when scrolling down
+      else if (currentScrollY < lastScrollY) {
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault()
     setMobileMenuOpen(false) // Close mobile menu when clicking a link
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const headerOffset = 100 // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     }
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent z-[1000] py-5 md:py-6 lg:py-8">
+    <header 
+      className={`fixed top-0 left-0 right-0 bg-transparent z-[1000] py-5 md:py-6 lg:py-8 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container-custom">
         <div className="flex items-center justify-between">
           <Link href="/" className="logo-group relative w-[90px] h-[65px] md:w-[100px] md:h-[72px] lg:w-[113px] lg:h-[81px]">
