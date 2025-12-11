@@ -24,11 +24,11 @@ export default function WhyUs() {
   const revenueItems = [
     'Recurring income streams and high customer lifetime value',
     'Record of consistent profitability and growth',
-    'EBITA >$2M and revenue $10-30M',
+    'EBITDA >$2M and revenue $10-30M',
   ]
 
   return (
-    <section className="bg-white pt-0 pb-10 sm:pb-12 md:pb-20 lg:pb-24">
+    <section className="bg-white pt-0 p-0  pb-10 sm:pb-12 md:pb-20 lg:pb-24">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 max-w-[1400px]">
         {/* Why Us Header */}
         <div className="text-center mb-6 sm:mb-8 md:mb-16 lg:mb-20">
@@ -119,20 +119,20 @@ export default function WhyUs() {
               <div className="space-y-3 sm:space-y-4 md:space-y-5">
                 <div className="flex items-center gap-2 sm:gap-3">
                   <span className="text-[#00BCD4] text-base sm:text-lg">♦</span>
-                  <span className="text-[#00BCD4] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-semibold">
-                    EBITA &gt;$2M
+                  <span className="text-[#00BCD4] text-[16px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-semibold">
+                    EBITDA &gt;$2M
                   </span>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-3">
                   <span className="text-[#00BCD4] text-base sm:text-lg">♦</span>
-                  <span className="text-[#00BCD4] text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-medium">
-                    Consistent profitability
+                  <span className="text-[#00BCD4] text-[16px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-semibold">
+                    10+ years operating
                   </span>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-3">
                   <span className="text-[#00BCD4] text-base sm:text-lg">♦</span>
-                  <span className="text-[#00BCD4] text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-medium">
-                    $10-30M enterprise value
+                  <span className="text-[#00BCD4] text-[16px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-semibold">
+                    Revenue &gt;$10M
                   </span>
                 </div>
               </div>

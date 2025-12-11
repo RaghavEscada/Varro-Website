@@ -251,7 +251,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="text-center py-4 md:py-5 border-t border-white/10 relative z-10">
         <p className="text-white/60 text-[12px] md:text-[13px]">
-          © {new Date().getFullYear()} Varro Group. All rights reserved.
+          © {new Date().getFullYear()} Varro Group Pty Ltd.
         </p>
       </div>
     </footer>

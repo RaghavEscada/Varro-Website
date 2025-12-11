@@ -17,7 +17,10 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(apiKey);
 
     const body = await request.json();
-    const { firstName, email, subject, message } = body;
+    const firstName = (body.firstName || '').trim();
+    const email = (body.email || '').trim();
+    const subject = (body.subject || '').trim();
+    const message = (body.message || '').trim();
 
     // Validate required fields
     if (!firstName || !email || !subject) {
@@ -78,7 +81,7 @@ export async function POST(request: NextRequest) {
               </div>
 
               <div class="footer">
-                <p class="footer-text">© ${new Date().getFullYear()} Varro Group. All rights reserved.</p>
+                <p class="footer-text">© ${new Date().getFullYear()} Varro Group Pty Ltd.</p>
               </div>
             </div>
           </div>
@@ -88,7 +91,7 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: 'Varro Group Contact Form <onboarding@resend.dev>',
-      to: 'raghavkrishnaiiitk27@gmail.com',
+      to: 'ben@varro.com.au',
       replyTo: email, // This allows you to reply directly to the sender
       subject: `[Varro Group] ${subject}`,
       html: htmlEmail,
@@ -98,7 +101,7 @@ export async function POST(request: NextRequest) {
     if (error) {
       console.error('Resend error:', error);
       return NextResponse.json(
-        { error: 'Failed to send email. Please try again.' },
+        { error: error.message || 'Failed to send email. Please try again.' },
         { status: 500 }
       );
     }

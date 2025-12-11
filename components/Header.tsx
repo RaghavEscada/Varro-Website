@@ -48,14 +48,27 @@ export default function Header() {
     setMobileMenuOpen(false) // Close mobile menu when clicking a link
     const element = document.getElementById(sectionId)
     if (element) {
-      const headerOffset = 100 // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      const elementRect = element.getBoundingClientRect()
+      const elementTop = elementRect.top + window.pageYOffset
+      
+      // For "Our Process", scroll to top of section. For others, center the section
+      if (sectionId === 'our-process') {
+        window.scrollTo({
+          top: elementTop,
+          behavior: 'smooth'
+        })
+      } else {
+        const elementHeight = elementRect.height
+        const viewportHeight = window.innerHeight
+        
+        // Calculate position to center the section in viewport
+        const centerPosition = elementTop + (elementHeight / 2) - (viewportHeight / 2)
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
+        window.scrollTo({
+          top: centerPosition,
+          behavior: 'smooth'
+        })
+      }
     }
   }
 

@@ -115,7 +115,7 @@ export default function ProcessImage() {
         <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[2px] md:w-[3px] bg-white/60 z-0 hidden md:block"></div>
 
         {/* FLEX COLUMN WITH FIXED GAPS (MATCH FIGMA SPACING) */}
-        <div className="relative flex flex-col gap-12 sm:gap-16 md:gap-[320px] lg:gap-[380px]">
+        <div className="relative flex flex-col gap-3 sm:gap-4 md:gap-[220px] lg:gap-[280px]">
 
           {processSteps.map((step, index) => (
             <div
@@ -123,7 +123,7 @@ export default function ProcessImage() {
               ref={(el) => { stepRefs.current[index] = el }}
               className="relative z-10"
             >
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 sm:gap-6 md:gap-20 lg:gap-28 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-3 sm:gap-5 md:gap-16 lg:gap-24 items-center">
 
                 {/* LEFT SIDE */}
                 <div className="flex flex-col items-start md:items-end text-left md:text-right pr-0 md:pr-6 order-1 md:order-1">
@@ -144,7 +144,7 @@ export default function ProcessImage() {
                   </div>
 
                   <h3
-                    className={`text-white text-[18px] sm:text-[20px] md:text-[28px] lg:text-[32px] leading-tight transition-all ${
+                    className={`text-white text-[16px] sm:text-[17px] md:text-[24px] lg:text-[28px] leading-tight transition-all ${
                       activeStep === index ? 'font-medium' : 'font-light'
                     }`}
                   >

@@ -3,10 +3,6 @@ import Image from 'next/image'
 export default function AboutDetailed() {
   const companies = [
     { 
-      name: 'BCG', 
-      logo: '/images/bcg.png'
-    },
-    { 
       name: 'Amazon', 
       logo: '/images/amazon.png'
     },
@@ -29,6 +25,10 @@ export default function AboutDetailed() {
     { 
       name: 'iFIT', 
       logo: '/images/ifit.png'
+    },
+    { 
+      name: 'BCG', 
+      logo: '/images/bcg.png'
     },
   ]
 
