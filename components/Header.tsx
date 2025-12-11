@@ -9,6 +9,18 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
@@ -121,7 +133,7 @@ export default function Header() {
 
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 bg-[#0B1525] z-[1000] pt-24 px-5">
+          <div className="lg:hidden fixed inset-0 bg-[#0B1525] z-[1000] flex flex-col h-screen px-6 pt-24 pb-10 overflow-y-auto">
             <nav className="flex flex-col gap-8">
               <a 
                 href="#what-we-invest" 

@@ -28,41 +28,41 @@ export default function WhyUs() {
   ]
 
   return (
-    <section className="bg-white pt-0 pb-16 md:pb-20 lg:pb-24">
-      <div className="container mx-auto px-5 md:px-12 lg:px-16 max-w-[1400px]">
+    <section className="bg-white pt-0 pb-10 sm:pb-12 md:pb-20 lg:pb-24">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 max-w-[1400px]">
         {/* Why Us Header */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <div className="w-[60px] md:w-[80px] lg:w-[100px] h-[2px] bg-[#1A1A1A] mx-auto mb-6 md:mb-8"></div>
-          <h2 className="font-display text-[36px] md:text-[44px] lg:text-[52px] font-semibold text-[#1A1A1A] mb-6 md:mb-8 uppercase">
+        <div className="text-center mb-6 sm:mb-8 md:mb-16 lg:mb-20">
+          <div className="w-[50px] sm:w-[60px] md:w-[80px] lg:w-[100px] h-[2px] bg-[#1A1A1A] mx-auto mb-3 sm:mb-4 md:mb-8"></div>
+          <h2 className="font-display text-[24px] sm:text-[28px] md:text-[44px] lg:text-[52px] font-semibold text-[#1A1A1A] mb-3 sm:mb-4 md:mb-8 uppercase">
             WHY US
           </h2>
-          <p className="text-[15px] md:text-[16px] lg:text-[18px] text-[#666666] max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-[#666666] max-w-[700px] mx-auto leading-relaxed px-2">
             We are an operator-led team committed to stewarding founder-owned and family-run businesses for the long term.
           </p>
         </div>
 
         {/* Value Propositions Grid with Vertical Dividers */}
-        <div className="relative mb-16 md:mb-20 lg:mb-24 bg-gray-100 rounded-lg p-8 md:p-10 lg:p-12">
+        <div className="relative mb-12 md:mb-20 lg:mb-24 bg-gray-100 rounded-lg p-4 sm:p-6 md:p-10 lg:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 auto-rows-auto">
             {/* First Row: Items 1, 2, 3 */}
             {valueProps.slice(0, 3).map((prop, index) => (
               <div
                 key={index}
-                className={`relative p-8 md:p-10 lg:p-12 row-start-1 ${
+                className={`relative p-4 sm:p-6 md:p-10 lg:p-12 ${
                   index < 2 ? 'border-b md:border-b-0 md:border-r lg:border-b-0 lg:border-r border-gray-200' : ''
                 } ${
                   index === 2 ? 'md:border-b lg:border-b-0 lg:border-r-0 border-gray-200' : ''
                 }`}
               >
                 {/* Large Number Above */}
-                <div className="text-[80px] md:text-[90px] lg:text-[100px] font-medium text-[#CCCCCC] leading-none mb-4 md:mb-6">
+                <div className="text-[45px] sm:text-[60px] md:text-[90px] lg:text-[100px] font-medium text-[#CCCCCC] leading-none mb-3 md:mb-6">
                   {prop.number}
                 </div>
                 
                 {/* Content with Teal Bullet */}
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-[#00BCD4] flex-shrink-0 mt-2"></div>
-                  <p className="text-[#1A1A1A] text-[16px] md:text-[17px] lg:text-[18px] font-medium leading-relaxed">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div className="w-2 h-2 rounded-full bg-[#00BCD4] flex-shrink-0 mt-1.5 md:mt-2"></div>
+                  <p className="text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[17px] lg:text-[18px] font-medium leading-relaxed">
                     {prop.text}
                   </p>
                 </div>
@@ -75,23 +75,19 @@ export default function WhyUs() {
                 {valueProps.slice(3, 5).map((prop, index) => (
                   <div
                     key={index + 3}
-                    className={`relative p-8 md:p-10 lg:p-12 ${
+                    className={`relative p-4 sm:p-6 md:p-10 lg:p-12 ${
                       index === 0 ? 'border-b md:border-b-0 md:border-r border-gray-200' : ''
                     }`}
                   >
                     {/* Large Number Above */}
-                    <div className="mb-4 md:mb-6">
-                      <div className="inline-block bg-gray-100 px-4 md:px-5 lg:px-6 py-2 md:py-3 lg:py-4 rounded">
-                        <div className="text-[80px] md:text-[90px] lg:text-[100px] font-medium text-[#CCCCCC] leading-none">
-                          {prop.number}
-                        </div>
-                      </div>
+                    <div className="text-[45px] sm:text-[60px] md:text-[90px] lg:text-[100px] font-medium text-[#CCCCCC] leading-none mb-3 md:mb-6">
+                      {prop.number}
                     </div>
                     
                     {/* Content with Teal Bullet */}
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-[#00BCD4] flex-shrink-0 mt-2"></div>
-                      <p className="text-[#1A1A1A] text-[16px] md:text-[17px] lg:text-[18px] font-medium leading-relaxed">
+                    <div className="flex items-start gap-2 md:gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#00BCD4] flex-shrink-0 mt-1.5 md:mt-2"></div>
+                      <p className="text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[17px] lg:text-[18px] font-medium leading-relaxed">
                         {prop.text}
                       </p>
                     </div>
@@ -103,39 +99,39 @@ export default function WhyUs() {
         </div>
             
         {/* What We Invest In Section */}
-        <div id="what-we-invest" className="bg-white py-16 md:py-20 lg:py-24 -mx-5 md:-mx-12 lg:-mx-16 px-5 md:px-12 lg:px-16 mb-16 md:mb-20 lg:mb-24 scroll-mt-24">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-20">
+        <div id="what-we-invest" className="bg-white py-10 sm:py-12 md:py-20 lg:py-24 -mx-4 sm:-mx-6 md:-mx-12 lg:-mx-16 px-4 sm:px-6 md:px-12 lg:px-16 mb-10 sm:mb-12 md:mb-20 lg:mb-24 scroll-mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-5 sm:gap-6 lg:gap-12 mb-8 sm:mb-10 md:mb-16 lg:mb-20">
             {/* Left Side - Description */}
             <div>
-              <div className="flex items-center gap-4 mb-6 md:mb-8">
-                <h3 className="font-serif text-[28px] md:text-[36px] lg:text-[42px] font-semibold text-[#1A1A1A]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-8">
+                <h3 className="font-serif text-[22px] sm:text-[24px] md:text-[36px] lg:text-[42px] font-semibold text-[#1A1A1A]">
                   What We Invest In
                 </h3>
-                <div className="w-[60px] md:w-[80px] h-[2px] bg-[#1A1A1A]"></div>
+                <div className="w-[50px] sm:w-[60px] md:w-[80px] h-[2px] bg-[#1A1A1A]"></div>
               </div>
-              <p className="text-[15px] md:text-[16px] lg:text-[17px] text-[#666666] leading-relaxed max-w-[600px]">
+              <p className="text-[13px] sm:text-[14px] md:text-[16px] lg:text-[17px] text-[#666666] leading-relaxed max-w-[600px]">
                 Whether you&apos;re exploring immediate opportunities or planning for the future, we welcome discussions about the potential of your business. We focus on companies that align with these criteria.
               </p>
           </div>
           
             {/* Right Side - Key Metrics Box */}
-            <div className="border-2 border-[#00BCD4] bg-white p-6 md:p-8 lg:p-10 min-w-[280px] lg:min-w-[320px]">
-              <div className="space-y-4 md:space-y-5">
-                <div className="flex items-center gap-3">
-                  <span className="text-[#00BCD4] text-lg">♦</span>
-                  <span className="text-[#00BCD4] text-[18px] md:text-[20px] lg:text-[22px] font-semibold">
+            <div className="border-2 border-[#00BCD4] bg-white p-4 sm:p-5 md:p-8 lg:p-10 w-full sm:min-w-[280px] lg:min-w-[320px]">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-[#00BCD4] text-base sm:text-lg">♦</span>
+                  <span className="text-[#00BCD4] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-semibold">
                     EBITA &gt;$2M
                   </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[#00BCD4] text-lg">♦</span>
-                  <span className="text-[#00BCD4] text-[16px] md:text-[17px] lg:text-[18px] font-medium">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-[#00BCD4] text-base sm:text-lg">♦</span>
+                  <span className="text-[#00BCD4] text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-medium">
                     Consistent profitability
                   </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[#00BCD4] text-lg">♦</span>
-                  <span className="text-[#00BCD4] text-[16px] md:text-[17px] lg:text-[18px] font-medium">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-[#00BCD4] text-base sm:text-lg">♦</span>
+                  <span className="text-[#00BCD4] text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-medium">
                     $10-30M enterprise value
                   </span>
                 </div>
@@ -144,21 +140,21 @@ export default function WhyUs() {
           </div>
 
           {/* Three Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-10 lg:gap-12">
             {/* Business Column */}
-            <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 md:p-8">
-              <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
+            <div className="bg-gray-50 border border-gray-100 rounded-lg p-4 sm:p-5 md:p-8">
+              <h4 className="text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-4 sm:mb-5 md:mb-8">
                 Business
               </h4>
-              <ul className="space-y-4 md:space-y-5">
+              <ul className="space-y-2.5 sm:space-y-3 md:space-y-5">
                 {businessItems.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li key={index} className="flex items-start gap-2 md:gap-3">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[14px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
+                    <span className="text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
                       {item}
                     </span>
                   </li>
@@ -167,19 +163,19 @@ export default function WhyUs() {
             </div>
 
             {/* Leadership Column */}
-            <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 md:p-8">
-              <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
+            <div className="bg-gray-50 border border-gray-100 rounded-lg p-4 sm:p-5 md:p-8">
+              <h4 className="text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-4 sm:mb-5 md:mb-8">
                 Leadership
               </h4>
-              <ul className="space-y-4 md:space-y-5">
+              <ul className="space-y-2.5 sm:space-y-3 md:space-y-5">
                 {leadershipItems.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li key={index} className="flex items-start gap-2 md:gap-3">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[14px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
+                    <span className="text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
                       {item}
                     </span>
                   </li>
@@ -188,19 +184,19 @@ export default function WhyUs() {
             </div>
 
             {/* Revenue Profile Column */}
-            <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 md:p-8">
-              <h4 className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-6 md:mb-8">
+            <div className="bg-gray-50 border border-gray-100 rounded-lg p-4 sm:p-5 md:p-8">
+              <h4 className="text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] font-semibold text-[#1A1A1A] mb-4 sm:mb-5 md:mb-8">
                 Revenue Profile
               </h4>
-              <ul className="space-y-4 md:space-y-5">
+              <ul className="space-y-2.5 sm:space-y-3 md:space-y-5">
                 {revenueItems.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li key={index} className="flex items-start gap-2 md:gap-3">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full border-2 border-[#666666] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-[#666666]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[14px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
+                    <span className="text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-[#666666] leading-relaxed">
                       {item}
                     </span>
                   </li>
@@ -211,7 +207,7 @@ export default function WhyUs() {
         </div>
 
         {/* Get In Touch Button */}
-        <div className="flex justify-center">
+        <div className="flex justify-center px-4 sm:px-6">
           <button 
             onClick={(e) => {
               e.preventDefault()
@@ -226,11 +222,11 @@ export default function WhyUs() {
                 })
               }
             }}
-            className="group flex items-center gap-4 bg-[#00BCD4] hover:bg-[#00ACC1] text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-[14px] md:text-[15px] lg:text-[16px] font-semibold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+            className="group flex items-center gap-2 sm:gap-3 md:gap-4 bg-[#00BCD4] hover:bg-[#00ACC1] text-white px-5 sm:px-6 md:px-10 py-2.5 sm:py-3 md:py-5 rounded-full text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] font-semibold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer w-full sm:w-auto"
           >
             GET IN TOUCH
-            <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </div>
