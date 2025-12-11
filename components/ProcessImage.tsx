@@ -105,15 +105,15 @@ export default function ProcessImage() {
 
         {/* Timeline - Centered with left/right content */}
         <div className="max-w-7xl mx-auto relative pb-16">
-          {/* Vertical line in center */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/20"></div>
+          {/* Continuous vertical line connecting all nodes */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/30 z-0"></div>
           
           {/* Steps */}
           {processSteps.map((step, index) => (
             <div 
               key={index} 
               ref={(el) => { stepRefs.current[index] = el }}
-              className="relative mb-36 md:mb-44 lg:mb-52 last:mb-0"
+              className="relative mb-48 md:mb-60 lg:mb-72 last:mb-0 z-10"
             >
               <div className="grid grid-cols-[1fr_auto_1fr] gap-14 md:gap-20 lg:gap-24 items-start">
                 {/* Left side - Week badge and Title */}

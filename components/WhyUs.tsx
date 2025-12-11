@@ -42,7 +42,7 @@ export default function WhyUs() {
         </div>
 
         {/* Value Propositions Grid with Vertical Dividers */}
-        <div className="relative mb-16 md:mb-20 lg:mb-24">
+        <div className="relative mb-16 md:mb-20 lg:mb-24 bg-gray-100 rounded-lg p-8 md:p-10 lg:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 auto-rows-auto">
             {/* First Row: Items 1, 2, 3 */}
             {valueProps.slice(0, 3).map((prop, index) => (
@@ -55,7 +55,7 @@ export default function WhyUs() {
                 }`}
               >
                 {/* Large Number Above */}
-                <div className="text-[80px] md:text-[90px] lg:text-[100px] font-light text-[#E5E5E5] leading-none mb-4 md:mb-6">
+                <div className="text-[80px] md:text-[90px] lg:text-[100px] font-medium text-[#CCCCCC] leading-none mb-4 md:mb-6">
                   {prop.number}
                 </div>
                 
@@ -80,8 +80,12 @@ export default function WhyUs() {
                     }`}
                   >
                     {/* Large Number Above */}
-                    <div className="text-[80px] md:text-[90px] lg:text-[100px] font-light text-[#E5E5E5] leading-none mb-4 md:mb-6">
-                      {prop.number}
+                    <div className="mb-4 md:mb-6">
+                      <div className="inline-block bg-gray-100 px-4 md:px-5 lg:px-6 py-2 md:py-3 lg:py-4 rounded">
+                        <div className="text-[80px] md:text-[90px] lg:text-[100px] font-medium text-[#CCCCCC] leading-none">
+                          {prop.number}
+                        </div>
+                      </div>
                     </div>
                     
                     {/* Content with Teal Bullet */}
@@ -99,15 +103,15 @@ export default function WhyUs() {
         </div>
             
         {/* What We Invest In Section */}
-        <div id="what-we-invest" className="bg-[#F5F5F5] py-16 md:py-20 lg:py-24 -mx-5 md:-mx-12 lg:-mx-16 px-5 md:px-12 lg:px-16 mb-16 md:mb-20 lg:mb-24 scroll-mt-24">
+        <div id="what-we-invest" className="bg-white py-16 md:py-20 lg:py-24 -mx-5 md:-mx-12 lg:-mx-16 px-5 md:px-12 lg:px-16 mb-16 md:mb-20 lg:mb-24 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-20">
             {/* Left Side - Description */}
             <div>
               <div className="flex items-center gap-4 mb-6 md:mb-8">
-                <div className="w-[60px] md:w-[80px] h-[2px] bg-[#1A1A1A]"></div>
                 <h3 className="font-serif text-[28px] md:text-[36px] lg:text-[42px] font-semibold text-[#1A1A1A]">
                   What We Invest In
                 </h3>
+                <div className="w-[60px] md:w-[80px] h-[2px] bg-[#1A1A1A]"></div>
               </div>
               <p className="text-[15px] md:text-[16px] lg:text-[17px] text-[#666666] leading-relaxed max-w-[600px]">
                 Whether you&apos;re exploring immediate opportunities or planning for the future, we welcome discussions about the potential of your business. We focus on companies that align with these criteria.

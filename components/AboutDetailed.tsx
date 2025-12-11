@@ -1,32 +1,34 @@
+import Image from 'next/image'
+
 export default function AboutDetailed() {
   const companies = [
     { 
       name: 'BCG', 
-      logo: 'https://logo.clearbit.com/bcg.com'
+      logo: '/images/bcg.png'
     },
     { 
       name: 'Amazon', 
-      logo: 'https://logo.clearbit.com/amazon.com'
+      logo: '/images/amazon.png'
     },
     { 
       name: 'Audible', 
-      logo: 'https://logo.clearbit.com/audible.com'
+      logo: '/images/audible.png'
     },
     { 
       name: 'Finder', 
-      logo: 'https://logo.clearbit.com/finder.com.au'
+      logo: '/images/finder.png'
     },
     { 
       name: 'AMP', 
-      logo: 'https://logo.clearbit.com/amp.com.au'
+      logo: '/images/amp.png'
     },
     { 
       name: 'Edelman', 
-      logo: 'https://logo.clearbit.com/edelman.com'
+      logo: '/images/edelman.png'
     },
     { 
       name: 'iFIT', 
-      logo: 'https://logo.clearbit.com/ifit.com'
+      logo: '/images/ifit.png'
     },
   ]
 
@@ -40,26 +42,29 @@ export default function AboutDetailed() {
           </h2>
 
           {/* First Paragraph */}
-          <p className="text-[17px] md:text-[18px] lg:text-[19px] text-[#1a1a1a] leading-relaxed mb-8 md:mb-10 max-w-4xl mx-auto font-light">
+          <p className="text-[17px] md:text-[18px] lg:text-[19px] text-[#1a1a1a] leading-relaxed mb-8 md:mb-10 max-w-4xl mx-auto font-semibold">
             We combine operational leadership with patient, long-term capital to help established Australian businesses grow sustainably.
           </p>
 
           {/* Second Paragraph */}
-          <p className="text-[17px] md:text-[18px] lg:text-[19px] text-[#1a1a1a] leading-relaxed mb-12 md:mb-14 lg:mb-16 max-w-4xl mx-auto font-light">
+          <p className="text-[17px] md:text-[18px] lg:text-[19px] text-[#1a1a1a] leading-relaxed mb-12 md:mb-14 lg:mb-16 max-w-4xl mx-auto font-semibold">
             Our background includes CEO and executive roles at companies such as:
           </p>
 
           {/* Company Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
+          <div className="flex flex-nowrap justify-center items-center gap-2 md:gap-3 lg:gap-4 w-full">
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl px-8 md:px-10 lg:px-12 py-5 md:py-6 flex items-center justify-center min-w-[140px] md:min-w-[160px] hover:border-gray-300 transition-colors"
+                className="bg-white border border-gray-200 rounded-xl px-3 md:px-4 lg:px-5 py-3 md:py-4 flex items-center justify-center flex-1 max-w-[140px] md:max-w-[160px] hover:border-gray-300 transition-colors"
               >
-                <img 
+                <Image 
                   src={company.logo} 
                   alt={company.name}
-                  className="h-8 md:h-9 lg:h-10 w-auto object-contain opacity-60 grayscale"
+                  width={120}
+                  height={40}
+                  className="h-6 md:h-7 lg:h-8 w-full object-contain opacity-80 grayscale"
+                  unoptimized
                 />
               </div>
             ))}
